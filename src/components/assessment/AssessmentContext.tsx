@@ -172,7 +172,7 @@ export function AssessmentProvider({ children }: { children: React.ReactNode }) 
 
   const steps = buildStepSequence(assessment);
   const progressSteps = steps.filter(s => s !== 'welcome' && s !== 'confirmation');
-  const progressIndex = progressSteps.indexOf(currentStep);
+  const progressIndex = progressSteps.indexOf(currentStep as Exclude<Step, 'welcome' | 'confirmation'>);
   const totalSteps = progressSteps.length;
   const progressPercent = progressIndex < 0 ? 0 : Math.round(((progressIndex + 1) / totalSteps) * 100);
   const stepIndex = steps.indexOf(currentStep);
