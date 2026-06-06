@@ -57,8 +57,8 @@ export async function POST(request: NextRequest) {
     const pricing = calculateInternalQuote(assessment as AssessmentData, distanceKm);
 
     // Send to integrations
-    appendAssessmentToSheets(assessment, pricing, timestamp).catch(console.error);
-    createZohoLead(assessment, pricing).catch(console.error);
+    appendAssessmentToSheets(assessment as AssessmentData, pricing, timestamp).catch(console.error);
+    createZohoLead(assessment as AssessmentData, pricing).catch(console.error);
 
     return NextResponse.json({ success: true, message: 'Zoho Form webhook processed.' });
   } catch (error) {
