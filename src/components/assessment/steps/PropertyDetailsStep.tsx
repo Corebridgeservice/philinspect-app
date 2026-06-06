@@ -13,7 +13,7 @@ declare global {
 export function PropertyDetailsStep() {
   const { assessment, setPropertyDetails, goNext } = useAssessment();
   const addressInputRef = useRef<HTMLInputElement>(null);
-  const autocompleteRef = useRef<google.maps.places.Autocomplete | null>(null);
+  const autocompleteRef = useRef<any>(null);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const isLotLand = assessment.propertyType === 'lot_land';
