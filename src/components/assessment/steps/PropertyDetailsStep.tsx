@@ -5,7 +5,7 @@ import { useAssessment } from '../AssessmentContext';
 
 declare global {
   interface Window {
-    google: typeof google;
+    google: any;
     initGooglePlaces: () => void;
   }
 }
