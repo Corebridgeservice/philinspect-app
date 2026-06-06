@@ -54,7 +54,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Calculate internal pricing
-    const pricing = calculateInternalQuote(assessment, distanceKm);
+    const pricing = calculateInternalQuote(assessment as AssessmentData, distanceKm);
 
     // Send to integrations
     appendAssessmentToSheets(assessment, pricing, timestamp).catch(console.error);
