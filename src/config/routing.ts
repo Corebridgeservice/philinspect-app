@@ -119,7 +119,7 @@ export const PROPERTY_TYPE_LABELS: Record<string, string> = {
   not_sure: 'Not Sure',
 };
 
-export const OWNER_SITUATION_LABELS: Record<OwnerSituation, string> = {
+export const OWNER_SITUATION_LABELS: Partial<Record<OwnerSituation, string>> = {
   near_turnover: 'My property is near turnover / just turned over',
   defects_under_warranty: 'I have defects still under warranty',
   repairs_completed: 'Repairs were completed — I want to verify',
