@@ -15,7 +15,7 @@ import { createZohoLead } from '@/lib/zoho-crm';
  * Normalize a Zoho Form payload into AssessmentData.
  * Field names must match your Zoho Form field IDs.
  */
-function normalizeZohoFormPayload(body: Record<string, unknown>): AssessmentData {
+function normalizeZohoFormPayload(body: Record<string, unknown>): Partial<AssessmentData> {
   return {
     userType: (body.user_type as AssessmentData['userType']) ?? null,
     propertyType: (body.property_type as AssessmentData['propertyType']) ?? null,
